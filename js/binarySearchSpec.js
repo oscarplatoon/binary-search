@@ -1,4 +1,4 @@
-var bs = require("./binarySearch"),
+var bs = require("./binarySearch");
 var test_array = [1,2,3,4,5];
 var super_big_array = [1,5,7,2,3,8,4,9];
 
