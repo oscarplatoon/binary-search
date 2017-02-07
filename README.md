@@ -1,5 +1,7 @@
 ## Binary Search
 
+**The goal of binary search is to find the index of a passed in value compared to an array of strings or integers.**
+
 Let's say that our set of values is shaped a little differently from our previous linear search challenge. Use this code to generate it:
 
 ```ruby
