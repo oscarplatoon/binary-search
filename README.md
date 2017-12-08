@@ -1,4 +1,4 @@
-## Binary Search
+# Binary Search
 
 **The goal of binary search is to find the index of a passed in value compared to an array of strings or integers.**
 
