@@ -4,10 +4,10 @@
 
 Let's say that our set of values is shaped a little differently from our previous linear search challenge. Use this code to generate it:
 
-```ruby
-values = (1..10000).to_a.sample(1000).sort
+```python
+values = random.sample(list(range(1,10000)), 1000)
+values.sort()
 ```
-
 We now have a total of 1000 unique values between 1 and 10,000 and, most importantly, they're sorted.
 
 Your challenge is to write a binary search. Here's the basic premise of the algorithm:
