@@ -11,3 +11,4 @@ print(binary_search(5, test_array) == 4)
 
 super_big_array = [1,5,7,2,3,8,4,9]
 print(binary_search(7, super_big_array) == 5)
+print(binary_search(6, super_big_array) == -1)
