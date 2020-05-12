@@ -18,6 +18,6 @@ Here's the basic premise of the algorithm:
 3. If `number_to_find` is equal to `middle_value` then your target is found
 4. If `number_to_find` is less than `middle_value`, split your `sorted_values` in half and repeat the algorithm on your new subset (the half of `sorted_values` before `middle_value`)
 5. If `number_to_find` is greater than `middle_value`, repeat step but with the half of `sorted_values `values` after `middle_value`
-6. Repeat until you find `sorted_values` or return `-1` if it doesn't exist
+6. Repeat until you find `number_to_find` or return `-1` if it doesn't exist
 
 **This is a difficult algorithm. Spend a LOT of time pseudocoding before even starting to code**
