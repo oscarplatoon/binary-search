@@ -5,6 +5,8 @@ from binary_search import middle_index
 
 class BinarySearchUnitTest(unittest.TestCase):
 
+    test_array = [i for i in range(1000)]
+
     def test_middle_index_odd(self):
         self.assertEqual(middle_index(0, 5), 3)
     
@@ -16,6 +18,12 @@ class BinarySearchUnitTest(unittest.TestCase):
 
     def test_even_search(self):
         self.assertEqual(binary_search(6, [1,2,3,4,5,6]), 5)
+    
+    def test_not_present_in_list(self):
+        self.assertEqual(binary_search(7, [1,2,3,4,5,6]), -1)
+
+    def test_large_number(self):
+        self.assertEqual(binary_search(500, self.test_array), 500)
 
 if __name__ == '__main__':
     unittest.main()

@@ -9,7 +9,7 @@ def binary_search(number_to_find, sorted_values):
     end_index = len(sorted_values) - 1
 
     while True:
-        middle_i = middle_index(start_index, end_index)-1
+        middle_i = middle_index(start_index, end_index)-1+start_index
         middle_value = sorted_values[middle_i]
 
         if number_to_find == middle_value:
@@ -18,7 +18,7 @@ def binary_search(number_to_find, sorted_values):
             return -1
         elif number_to_find < middle_value:
             end_index = middle_i - 1
-        elif number_to_find > middle_value:
+        else:
             start_index = middle_i + 1
         
     # print(middle_value)
@@ -35,3 +35,4 @@ def binary_search(number_to_find, sorted_values):
     #     print("Number larger than middle value")
     #     return binary_search(number_to_find, sorted_values[middle_i+1:])
 
+binary_search(6, [1,2,3,4,5,6])
