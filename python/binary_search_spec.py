@@ -6,17 +6,17 @@ from binary_search import middle_index
 class BinarySearchUnitTest(unittest.TestCase):
 
     def test_middle_index_odd(self):
-        self.assertEqual(middle_index([1,2,3,4,5]), 3)
+        self.assertEqual(middle_index(0, 5), 3)
     
     def test_middle_index_even(self):
-        self.assertEqual(middle_index([1,2,3,4]), 2)
+        self.assertEqual(middle_index(0, 3), 2)
 
-    def test_odd_search(self):
-        self.assertEqual(binary_search(2, [1,2,3,4,5]), 1)
+    def test_search(self):
+        self.assertEqual(binary_search(2, [2]), 0)
 
     def test_even_search(self):
         self.assertEqual(binary_search(6, [1,2,3,4,5,6]), 5)
-        
+
 if __name__ == '__main__':
     unittest.main()
 
