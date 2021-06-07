@@ -20,19 +20,4 @@ def binary_search(number_to_find, sorted_values):
             end_index = middle_i - 1
         else:
             start_index = middle_i + 1
-        
-    # print(middle_value)
-    # if number_to_find == sorted_values[middle_i]:
-    #     print(f"Number found {middle_i}")
-    #     return middle_i
-    # elif len(sorted_values) == 1:
-    #     print("Number not found")
-    #     return -1
-    # elif number_to_find < middle_value:
-    #     print("Number smaller than middle value")
-    #     return binary_search(number_to_find, sorted_values[0:middle_i])
-    # elif number_to_find > middle_value:
-    #     print("Number larger than middle value")
-    #     return binary_search(number_to_find, sorted_values[middle_i+1:])
 
-binary_search(6, [1,2,3,4,5,6])
