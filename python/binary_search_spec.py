@@ -1,16 +1,31 @@
 # Write your unit tests here
-
+import unittest
+from unittest.main import main
 from binary_search import binary_search
 
-test_array = [1,2,3,4,5]
+class BinarySearchTestCase(unittest.TestCase):
 
-print(binary_search(1, test_array) == 0)
-print(binary_search(2, test_array) == 1)
-print(binary_search(3, test_array) == 2)
-print(binary_search(4, test_array) == 3)
-print(binary_search(5, test_array) == 4)
+    def test_one(self):
+        self.assertEqual(binary_search(1,[1,2,3,4,5]), 0)
+    
+    def test_two(self):
+        self.assertEqual(binary_search(2,[1,2,3,4,5]), 1)
+
+    def test_three(self):
+        self.assertEqual(binary_search(3,[1,2,3,4,5]), 2)
+
+    def test_four(self):
+        self.assertEqual(binary_search(4,[1,2,3,4,5]), 3)
+
+    def test_five(self):
+        self.assertEqual(binary_search(5,[1,2,3,4,5]), 4)
+
+    def test_six(self):
+        self.assertEqual(binary_search(7,[1,5,7,2,3,8,4,9]), 5)
+    
+    def test_not_found(self):
+        self.assertEqual(binary_search(6,[1,5,7,2,3,8,4,9]), -1)
 
 
-super_big_array = [1,5,7,2,3,8,4,9]
-print(binary_search(7, super_big_array) == 5)
-print(binary_search(6, super_big_array) == -1)
+if __name__ == '__main__':
+    unittest.main
