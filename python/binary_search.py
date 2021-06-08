@@ -1,59 +1,37 @@
-# sort numbers and set as sorted_list
-# note that proportion of covered list => k == 1 / (2**k); k == number of guesses
-# consider setting initial start_num as sorted_list[0];
-# consider setting initial end_num as sorted_list[len(sorted_list) - 1].
-# look for target_num; number exactly 1/2 way between start_num and end_num.  
-# if num_to_find < target_num, then end_num = target_num and start_num doesn't change.
-# if num_to_find > taget_num, then start_num = target_num and end_num doesn't change.
-# if the num_to_find isn't found in the sorted_list, return -1.  
-# otherwise, return index_to_find (index of num_to_find) in sorted_list.
+# sort list
+# find middle of list
+# see if num_to_find matches number in middle of list
+# if num_to_find matches number in middle of list; return index of number in middle of list.
+# if num_to_match does not match number in middle of list, assess whether num_to_match is > or < in regards to number in middle of list.
+# eliminate the half of the list that the num_to_match is not on and pick number in middle of new list; list that is not 1/2 length of original list.
+# repeat until number is found.  However, if length of list is reduced to 1 and num_to_match still isn't found, return -1 and exit function.
+
 
 def binary_search(num_to_find, list):
     sorted_list = sorted(list)
-    index_to_find = 0
-    counter = 1
-    target_index = round(((len(sorted_list) - 1) / (counter ** 2))
-
-    while index_to_find = 0:
-        try:
-            if sorted_list[target_index] == num_to_find:
-                index_to_find = target_index
-            elif num_to_find < sorted_list[target_index]:
-                counter += 1
-                target_index -= target_index
-            elif num_to_find > sorted_list[target_index]:
-                counter += 1
-                target_index += target_index
-        except:
-              index_to_find = -1
-         
+    index_to_find = None
+    counter = 0
+    
+    while index_to_find == None and counter < 5:
+        middle_number_index = (len(sorted_list) - 1) // 2
+        middle_number = sorted_list[middle_number_index]
+        print(sorted_list)
+        print(f"middle number index: {middle_number_index}")
+        print(f"middle number: {middle_number}")
+        
+        if num_to_find == middle_number:
+            index_to_find = sorted_list[middle_number]
+            break
+        elif num_to_find > middle_number:
+            sorted_list = sorted_list[middle_number_index:]
+        elif num_to_find < middle_number:
+            sorted_list = sorted_list[:middle_number_index]
+        else:
+            index_to_find = -1
+        counter += 1
+        
     return index_to_find
-
-print(binary_search(7, [1,5,7,2,3,8,4,9]))
-            
-            
         
-
-
-    # for x in sorted_list:
-        # print(i)
-    
-        # print(target_num)
-       
-        
-        
-        # if x == num_to_find:
-        #     index = x
-        # elif 
-    
-    # print(sorted_list)
-    # print(sorted_list[len(sorted_list) - 1])
-    # print(len(sorted_list) - 1)
-
-    # print(sorted_list)
-    # print(i)
-    # print(target_num)
-    
-# super_big_array = [1,5,7,2,3,8,4,9]
-print(binary_search(7, [1,5,7,2,3,8,4,9]))
-# print(binary_search(6, super_big_array) == -1)
+# # super_big_array = [1,5,7,2,3,8,4,9]
+print(binary_search(8, [1,5,7,2,3,8,4,9]))
+# # print(binary_search(6, super_big_array) == -1)
