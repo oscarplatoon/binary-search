@@ -9,29 +9,25 @@
 
 def binary_search(num_to_find, list):
     sorted_list = sorted(list)
-    index_to_find = None
-    counter = 0
     
-    while index_to_find == None and counter < 5:
-        middle_number_index = (len(sorted_list) - 1) // 2
-        middle_number = sorted_list[middle_number_index]
-        print(sorted_list)
-        print(f"middle number index: {middle_number_index}")
-        print(f"middle number: {middle_number}")
+    starting_index = 0
+    ending_index = (len(sorted_list) - 1)
+    target_index = 0
         
-        if num_to_find == middle_number:
-            index_to_find = sorted_list[middle_number]
-            break
-        elif num_to_find > middle_number:
-            sorted_list = sorted_list[middle_number_index:]
-        elif num_to_find < middle_number:
-            sorted_list = sorted_list[:middle_number_index]
+    while starting_index <= ending_index:
+        target_index = (ending_index + starting_index) // 2
+        if sorted_list[target_index] < num_to_find:
+            starting_index = target_index + 1
+            
+            
+        elif sorted_list[target_index] > num_to_find:
+            ending_index = target_index - 1
+            
         else:
-            index_to_find = -1
-        counter += 1
-        
-    return index_to_find
-        
-# # super_big_array = [1,5,7,2,3,8,4,9]
-print(binary_search(8, [1,5,7,2,3,8,4,9]))
-# # print(binary_search(6, super_big_array) == -1)
+            return target_index
+         
+    return -1
+
+print(binary_search(11, [1,5,7,2,3,8,4,9]))
+            
+         
